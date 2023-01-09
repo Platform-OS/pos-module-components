@@ -79,9 +79,9 @@ metadata:
 
 
   if size == 'small'
-    assign classes = classes | append: ' h-7 px-4 py-1 border text-sm leading-[1.43]'
+    assign classes = classes | prepend: 'h-7 px-4 py-1 border text-sm leading-[1.43] '
   else
-    assign classes = classes | append: ' h-11 px-4 py-2.5 border-2 leading-tight'
+    assign classes = classes | prepend: 'h-11 px-4 py-2.5 border-2 leading-tight '
   endif
 
 %}

@@ -55,6 +55,10 @@ metadata:
   assign icon = icon | default: params.icon
   assign href = href | default: params.href
 
+  if content == blank
+    assign classes = classes | prepend: 'px-2'
+  endif
+
   assign wrapper_classes = "flex items-center gap-" | append: gap
   if alignment == "left"
     assign wrapper_classes = wrapper_classes | append:  " flex-row-reverse"

@@ -66,7 +66,7 @@ metadata:
   assign imageClasses = 'rounded-full overflow-hidden '
 
   assign stringClasses = classes | append: ' ' | append: stringClasses | append: sizes[size]
-  assign imageClasses = classes | append: imageClasses | append: sizes[size] | append: classes
+  assign imageClasses = classes | append: ' ' | append: imageClasses | append: sizes[size] | append: classes
 
   assign colorIndex = 0
   assign names = name | split: " "
