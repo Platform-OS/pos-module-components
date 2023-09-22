@@ -30,20 +30,20 @@ metadata:
 <div class="hidden bg-inverted w-96 p-6"
   data-closed="{{closed}}"
   data-closable="{{closable}}"
-  data-popup-id="{{popup_id}}"
+  data-popup-id="{{ popup_id }}"
   data-pos-component="popup"
   tabindex="0"
   aria-hidden="true"
   role="popup"
   aria-modal="true"
-  aria-labelledby="popup_title_{{popup_id}}">
+  aria-labelledby="popup_title_{{ popup_id }}">
   <div class="flex justify-between">
     {% assign headline_params = null | hash_merge: tag: 'h2', variant: 'h2', content: title %}
-    <div id="popup_title_{{popup_id}}">
+    <div id="popup_title_{{ popup_id }}">
       {% theme_render_rc 'components/atoms/heading', params: headline_params %}
     </div>
-    <div class="cursor-pointer" data-popup-open-id="{{popup_id}}">
-      {% if closeIcon == true and closable == true%}
+    <div class="cursor-pointer" data-popup-open-id="{{ popup_id }}">
+      {% if closeIcon == true and closable == true %}
       {% theme_render_rc 'components/atoms/icon', params: icon_params %}
       {% endif %}
     </div>

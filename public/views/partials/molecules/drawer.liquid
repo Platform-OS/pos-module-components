@@ -46,7 +46,7 @@ metadata:
   class="inline-block"
 >
   <button
-    class="{{label_classes}}"
+    class="{{ label_classes }}"
     {% for attribute in label_attributes %}
       {{ attribute[0] | html_safe }}="{{ attribute[1] | html_safe }}"
     {% endfor %}
@@ -56,7 +56,7 @@ metadata:
   </button>
   <div
     data-dropdown-content="drawer"
-    class="{{drawer_classes}}"
+    class="{{ drawer_classes }}"
     aria-hidden="true"
   >
     {{ content | html_safe }}

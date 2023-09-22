@@ -55,7 +55,7 @@ metadata:
   class="md:relative inline-block"
 >
   <button
-    class="{{label_classes}}"
+    class="{{ label_classes }}"
     {% for attribute in label_attributes %}
       {{ attribute[0] | html_safe }}="{{ attribute[1] | html_safe }}"
     {% endfor %}
@@ -65,7 +65,7 @@ metadata:
   </button>
   <div
     data-dropdown-content
-    class="hidden absolute z-20 mt-3 w-screen md:w-auto sm:min-w-44 md:top-full start-0 md:start-auto end-0 changes-transform {{classes}}"
+    class="hidden absolute z-20 mt-3 w-screen md:w-auto sm:min-w-44 md:top-full start-0 md:start-auto end-0 changes-transform {{ classes }}"
     aria-hidden="true"
   >
     {% unless arrow == false %}

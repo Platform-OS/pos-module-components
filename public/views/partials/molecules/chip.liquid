@@ -43,15 +43,15 @@ metadata:
 
   assign icon_params = '{}' | parse_json | hash_merge: name: 'x', class: 'w-3 h-3 ml-2 '
 %}
-<div class="inline-block {{wrapper_classes}}">
-  <{{tag}} class="{{classes}}"
+<div class="inline-block {{ wrapper_classes }}">
+  <{{ tag }} class="{{ classes }}"
     {% for attribute in attributes %}
       {{ attribute[0] | html_safe }}="{{ attribute[1] | html_safe }}"
     {% endfor %}
     >
-    {{content}}
+    {{ content }}
     {% if closable == true %}
       {% theme_render_rc 'components/atoms/icon', params: icon_params %}
     {% endif %}
-</{{tag}}>
+</{{ tag }}>
 </div>

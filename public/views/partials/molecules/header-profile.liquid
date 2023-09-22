@@ -23,9 +23,9 @@ metadata:
   assign names = name | split: " "
 %}
 <div class="inline-block">
-  <div class="{{classes}}">
+  <div class="{{ classes }}">
     <div class="hidden sm:block pr-2">
-      {{names[0]}}
+      {{ names[0] }}
     </div>
     {% theme_render_rc 'components/atoms/avatar', params: avatar_params %}
   </div>

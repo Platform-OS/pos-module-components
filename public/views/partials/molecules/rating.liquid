@@ -42,7 +42,7 @@ metadata:
   assign classes = 'inline-flex '
 
 %}
-<div class="pos-rating {{classes}}">
+<div class="pos-rating {{ classes }}">
 
   {% for i in (1..max_value) %}
     {% if static == true %}
@@ -52,7 +52,7 @@ metadata:
         {% theme_render_rc 'components/atoms/icon', params: icon_params %}
       {% endif %}
     {% else %}
-    <label for="{{name}}-rating-stars-{{i}}">
+    <label for="{{ name }}-rating-stars-{{i}}">
       {% theme_render_rc 'components/atoms/icon', params: icon_params_filled %}
       {% theme_render_rc 'components/atoms/icon', params: icon_params %}
     </label>
@@ -60,9 +60,9 @@ metadata:
       type="radio"
       name="{{name}}"
       class="hidden"
-      id="{{name}}-rating-stars-{{i}}"
+      id="{{ name }}-rating-stars-{{i}}"
       {% if i == value %}checked{% endif %}
-      value="{{i}}"
+      value="{{ i }}"
     />
     {% endif %}
   {% endfor %}

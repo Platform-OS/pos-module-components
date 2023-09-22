@@ -91,7 +91,7 @@ metadata:
 %}
 
 {% if multiple == true %}
-<div data-pos-component="select" class="relative inline-block {{classes}}" id="{{id}}">
+<div data-pos-component="select" class="relative inline-block {{ classes }}" id="{{id}}">
   <div class="pos-select pos-select--multi-custom w-full">
     <div class="pos-select__head cursor-pointer flex items-center justify-between border border-input-border bg-panel py-2 px-2 h-11" tabindex="0">
       <div class="{% if value %}hidden {% endif %}pos-select__placeholder cursor-pointer">{{placeholder}}</div>
@@ -116,7 +116,7 @@ metadata:
         {% endif %}
 
         {% for option in options %}
-          <div class="{% if combined %} !hidden {% endif %} {% unless value contains option.value%}hidden {% endunless %}mr-2 cursor-pointer" data-value="{{option.value}}">
+          <div class="{% if combined %} !hidden {% endif %} {% unless value contains option.value %}hidden {% endunless %}mr-2 cursor-pointer" data-value="{{option.value}}">
             {% assign chip_params = '{}' | parse_json | hash_merge: closable: true, variant: 'clickable', content: option.label %}
             {% theme_render_rc 'components/molecules/chip', params: chip_params %}
           </div>
@@ -137,14 +137,13 @@ metadata:
     <div class="pos-select__popup w-full px-1 py-2 z-50 hidden absolute bg-panel shadow-card" aria-hidden="true">
       {% if filter %}
         <div class="mb-2 pb-2 border-b">
-          <input type="text" class="pos-select__filter w-full py-2 px-4" placeholder="{{filter_placeholder}}">
+          <input type="text" class="pos-select__filter w-full py-2 px-4" placeholder="{{ filter_placeholder }}">
         </div>
       {% endif %}
       <ul class="pos-select__options max-h-48 overflow-y-auto">
         {% for option in options %}
         {% liquid
           assign opt_id = id | append: '_' | append: option.value
-          assign input_name = name | append: '[]'
           assign input_params = '{}' | parse_json | hash_merge: value: option.value, id: opt_id, attributes: attributes, focusable: false
           if value contains option.value
             hash_assign input_params['checked'] = true
@@ -152,7 +151,7 @@ metadata:
         %}
         <li class="pos-select__option flex items-center py-2 px-4">
           {% theme_render_rc 'components/atoms/checkbox', params: input_params %}
-          <label class="ml-2 cursor-pointer" for="{{opt_id}}">{{option.label}}</label>
+          <label class="ml-2 cursor-pointer" for="{{ opt_id }}">{{ option.label }}</label>
         </li>
         {% endfor %}
       </ul>
@@ -160,30 +159,30 @@ metadata:
   </div>
 
   <select
-    class="pos-select--multi-native h-11 border border-input-border bg-panel {{classes}}"
+    class="pos-select--multi-native h-11 border border-input-border bg-panel {{ classes }}"
     name="{{name}}[]"
     multiple
-    aria-labelledby="{{name}}"
+    aria-labelledby="{{ name }}"
     {% for attribute in attributes %}
       {{ attribute[0] | html_safe }}="{{ attribute[1] | html_safe }}"
     {% endfor %}
     >
     {% for option in options %}
-    <option value="{{option.value}}" {% if value contains option.value %}selected{% endif %}>{{option.label}}</option>
+    <option value="{{ option.value }}" {% if value contains option.value %}selected{% endif %}>{{ option.label }}</option>
     {% endfor %}
   </select>
 </div>
 {% endif %}
 
 {% if multiple == false %}
-<div data-pos-component="select" class="relative {{classes}}" id="{{id}}">
+<div data-pos-component="select" class="relative {{ classes }}" id="{{id}}">
   <div class="pos-select pos-select--simple-custom w-full">
     <div class="pos-select__head cursor-pointer flex items-center justify-between border border-input-border bg-panel py-2 px-2 h-11" tabindex="0">
       <div class="{% if value %}hidden {% endif %}pos-select__placeholder cursor-pointer">{{placeholder}}</div>
       <div class="pos-select__tags flex">
         {% for option in options %}
-        <div class="{% unless value == option.value%}hidden {% endunless %}mr-2 cursor-pointer" data-value="{{option.value}}">
-          {{option.label}}
+        <div class="{% unless value == option.value %}hidden {% endunless %}mr-2 cursor-pointer" data-value="{{option.value}}">
+          {{ option.label }}
         </div>
         {% endfor %}
       </div>
@@ -202,14 +201,14 @@ metadata:
     <div class="pos-select__popup hidden absolute bg-panel shadow-card px-1 py-2 z-50 w-full" aria-hidden="true">
       {% if filter %}
         <div class="mb-2 pb-2 border-b">
-          <input type="text" class="pos-select__filter w-full py-2 px-4" placeholder="{{filter_placeholder}}">
+          <input type="text" class="pos-select__filter w-full py-2 px-4" placeholder="{{ filter_placeholder }}">
         </div>
       {% endif %}
 
       <ul class="pos-select__options max-h-48 overflow-y-auto">
         {% for option in options %}
           <li class="pos-select__option {% if value == option.value %}bg-highlighted {% endif %}flex items-center py-2 px-4 cursor-pointer hover:text-inverted hover:bg-interactive-hover" data-value="{{option.value}}">
-            {{option.label}}
+            {{ option.label }}
           </li>
         {% endfor %}
       </ul>
@@ -218,9 +217,9 @@ metadata:
   </div>
 
   <select
-    class="pos-select--simple-native h-11 border border-input-border bg-panel {{classes}}"
+    class="pos-select--simple-native h-11 border border-input-border bg-panel {{ classes }}"
     name="{{name}}"
-    aria-labelledby="{{name}}"
+    aria-labelledby="{{ name }}"
     {% for attribute in attributes %}
       {{ attribute[0] | html_safe }}="{{ attribute[1] | html_safe }}"
     {% endfor %}
@@ -228,7 +227,7 @@ metadata:
     {% for option in options %}
     <option
       class="bg-panel"
-      value="{{option.value}}" {% if value == option.value %}selected{% endif %}>{{option.label}}</option>
+      value="{{ option.value }}" {% if value == option.value %}selected{% endif %}>{{ option.label }}</option>
     {% endfor %}
   </select>
 </div>

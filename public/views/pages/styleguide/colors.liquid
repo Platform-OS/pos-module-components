@@ -18,9 +18,9 @@ slug: styleguide/tokens/colors
       <div class="flex flex-wrap gap-4">
         {% for color in theme_variables.colors %}
         <div class="w-full md:w-1/6">
-          <div class="w-full h-10 bg-{{color.name}} border-white border rounded-md shadow-lg" style="background-color: rgb({{color.value}});"></div>
-          <div class="mb-6" data-color="{{color.value}}">
-            {{color.name}} <br> rgb({{color.value}}); <br> <span data-color-hex=""></span>
+          <div class="w-full h-10 bg-{{ color.name }} border-white border rounded-md shadow-lg" style="background-color: rgb({{ color.value }});"></div>
+          <div class="mb-6" data-color="{{ color.value }}">
+            {{ color.name }} <br> rgb({{ color.value }}); <br> <span data-color-hex=""></span>
           </div>
         </div>
         {% endfor %}

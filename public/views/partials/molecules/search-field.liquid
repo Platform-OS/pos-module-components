@@ -118,13 +118,12 @@ metadata:
 
   assign input_params = input_params | default: params.input_params | hash_merge: classes: input_classes
   assign icon_params = null | hash_merge: name: 'search'
-  assign icon_button_params = null | hash_merge: classes: icon_button_classes
 
   assign button_params = button_params | default: params.button_params | hash_merge: size: button_size, classes: string_button_classes
   assign icon_button = button_params | hash_merge: gap: 0, name: 'search', classes: icon_button_classes
 
 %}
-<div class="inline-flex items-center focus-within:border-interactive-graphic {{classes}}">
+<div class="inline-flex items-center focus-within:border-interactive-graphic {{ classes }}">
   {% if button_params.icon == blank or button == false %}
     {% theme_render_rc 'components/atoms/icon', params: icon_params %}
   {% endif %}

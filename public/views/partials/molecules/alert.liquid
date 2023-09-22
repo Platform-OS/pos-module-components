@@ -59,15 +59,15 @@ metadata:
 
   assign icon_params = '{}' | parse_json | hash_merge: name: icons[severity].name, class: icon_classes
 %}
-<div class="inline-block {{wrapper_classes}}"
+<div class="inline-block {{ wrapper_classes }}"
   {% for attribute in attributes %}
     {{ attribute[0] | html_safe }}="{{ attribute[1] | html_safe }}"
   {% endfor %}
 >
-  <{{tag}} class="{{classes}}" data-tc="alert">
+  <{{ tag }} class="{{ classes }}" data-tc="alert">
       {% if icon == true %}
         {% theme_render_rc 'components/atoms/icon', params: icon_params %}
       {% endif %}
-      {{content | html_safe}}
-  </{{tag}}>
+      {{ content | html_safe }}
+  </{{ tag }}>
 </div>

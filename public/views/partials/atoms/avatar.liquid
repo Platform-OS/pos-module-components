@@ -85,11 +85,11 @@ metadata:
 %}
 
 {% if imageSrc == blank %}
-<div class="{{stringClasses}}">
-    {{names[0] | slice: 0}}{{names[1] | slice: 0}}
+<div class="{{ stringClasses }}">
+    {{ names[0] | slice: 0 }}{{ names[1] | slice: 0 }}
 </div>
 {% else %}
-<div class="{{imageClasses}}">
-  <img src="{{imageSrc}}" class="object-cover {{sizes[size]}}">
+<div class="{{ imageClasses }}">
+  <img src="{{ imageSrc }}" class="object-cover {{ sizes[size] }}">
 </div>
 {% endif %}

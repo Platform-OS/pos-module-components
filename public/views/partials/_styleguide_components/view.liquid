@@ -51,7 +51,7 @@
               %}
               <p class="pt-4"><span class="font-bold">{{ param_group[0] | humanize }} ({{ rendertype }}):</span>
               {% if paramtype == 'Array' %}
-                {{ param_group[1] | join: ' | '}}
+                {{ param_group[1] | join: ' | ' }}
               {% else %}
                 {{ param_group[1] }}
               {% endif %}
@@ -65,7 +65,7 @@
 
   <div class="flex-1">
     <section class="p-4">
-      <div data-styleguide-component="{{component.metadata.name}}" class="relative">
+      <div data-styleguide-component="{{ component.metadata.name }}" class="relative">
       {% try %}
         {% if styleguide_stories %}
           {% assign styleguide_stories_type = styleguide_stories | type_of %}
@@ -102,7 +102,7 @@
                     assign key = param_group[0]
                     hash_assign render_params[key] = param_value
                   %}<br>
-                  <b>{{key}}:</b> {{param_value}}
+                  <b>{{ key }}:</b> {{ param_value }}
                   <br>
                   <div class="mt-4">
                     {% include component.path, params: render_params %}
@@ -116,7 +116,7 @@
           {% include component.path %}
         {% endif %}
       {% catch err %}
-        {{err}}
+        {{ err }}
       {% endtry %}
       </div>
     </section>

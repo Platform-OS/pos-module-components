@@ -63,19 +63,19 @@ metadata:
   <div class="h-full flex flex-col">
     <div class="relative w-full h-0 pt-[calc(100%*(9/16))]">
       {% if url != blank %}
-      <a href="{{url}}">
-        <span class="sr-only">{{title}}</span>
+      <a href="{{ url }}">
+        <span class="sr-only">{{ title }}</span>
       {% endif %}
         <picture>
           {% if avifSrcSet != blank and imgSrc != blank %}
-            <source type="image/avif" srcset="{{avifSrcSet}}">
+            <source type="image/avif" srcset="{{ avifSrcSet }}">
             {% assign src = imgSrc %}
             {% assign srcset = imgSrcSet %}
           {% else %}
             {% assign src = 'modules/components/images/Placeholder_image.png' | asset_url %}
             {% assign srcset = '' %}
           {% endif %}
-          <img src="{{src}}" srcset="{{srcset}}" alt="{{title}}" class="absolute w-full h-full object-cover top-0" width="476" height="268">
+          <img src="{{src}}" srcset="{{srcset}}" alt="{{ title }}" class="absolute w-full h-full object-cover top-0" width="476" height="268">
         </picture>
       {% if url != blank %}
       </a>
@@ -84,17 +84,17 @@ metadata:
     <div class="p-6">
       {% if title != blank %}
         {% if url != blank %}
-        <a href="{{url}}">
+        <a href="{{ url }}">
         {% endif %}
           {% theme_render_rc 'components/atoms/heading', content: title, classes: titleClasses, level: 4 %}
         {% if url != blank %}
         </a>
         {% endif %}
       {% endif %}
-      <div class="pb-4">{{content | html_safe}}</div>
+      <div class="pb-4">{{ content | html_safe }}</div>
     </div>
     <div class="p-6 mt-auto">
-      {{footerContent | html_safe}}
+      {{ footerContent | html_safe }}
     </div>
   </div>
 {% endcapture %}

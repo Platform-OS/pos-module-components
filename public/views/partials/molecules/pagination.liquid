@@ -57,7 +57,7 @@ metadata:
   <ul class="flex">
     {% if startPage > 1 %}
       <li>
-        <a class="{{arrowClasses}}" href="{{url}}{{leftArrow}}" aria-label="Goto Page {{leftArrow}}">
+        <a class="{{ arrowClasses }}" href="{{ url }}{{  leftArrow  }}" aria-label="Goto Page {{leftArrow}}">
           {% assign icon_params = null | hash_merge: name: 'dashLeft' %}
           {% theme_render_rc 'components/atoms/icon', params: icon_params %}
         </a>
@@ -67,16 +67,16 @@ metadata:
       {% if i >= startPage and i <= endPage %}
         <li>
           {% if active == i %}
-            <a href="{{url}}{{i}}" class="{{classes}} rounded-surface border border-button-secondary-stroke" aria-label="Current Page, Page {{i}}" aria-current="true">{{i}}</a>
+            <a href="{{ url }}{{   i   }}" class="{{ classes }} rounded-surface border border-button-secondary-stroke" aria-label="Current Page, Page {{i}}" aria-current="true">{{i}}</a>
           {% else %}
-            <a href="{{url}}{{i}}" class="{{classes}}" aria-label="Goto Page {{i}}">{{i}}</a>
+            <a href="{{ url }}{{   i   }}" class="{{ classes }}" aria-label="Goto Page {{i}}">{{i}}</a>
           {% endif %}
         </li>
       {% endif %}
     {% endfor %}
     {% if count > endPage %}
       <li>
-        <a class="{{arrowClasses}}" href="{{url}}{{rightArrow}}" aria-label="Goto Page {{rightArrow}}">
+        <a class="{{ arrowClasses }}" href="{{ url }}{{  rightArrow  }}" aria-label="Goto Page {{rightArrow}}">
           {% assign icon_params = null | hash_merge: name: 'dashRight' %}
           {% theme_render_rc 'components/atoms/icon', params: icon_params %}
         </a>

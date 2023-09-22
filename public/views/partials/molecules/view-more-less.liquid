@@ -31,30 +31,30 @@ metadata:
   <div data-pos-component="moreless">
     <div class="more-less__short">
       {% for i in (0..limit) %}
-        {{content[i] | html_safe}}
+        {{ content[i] | html_safe }}
       {% endfor %}
-      <a class="more-less__button--more block" href="#">{{more_text | html_safe}}</a>
+      <a class="more-less__button--more block" href="#">{{ more_text | html_safe }}</a>
     </div>
     <div class="more-less__full hidden">
       {% for i in (0..content.size) %}
-        {{content[i] | html_safe}}
+        {{ content[i] | html_safe }}
       {% endfor %}
-      <a class="more-less__button--less block" href="#">{{less_text| html_safe}}</a>
+      <a class="more-less__button--less block" href="#">{{ less_text | html_safe }}</a>
     </div>
   </div>
 {% else %}
   <div data-pos-component="moreless">
     {% if content.size > limit %}
       <div class="more-less__short">
-        {{ content | html_safe | truncate: limit, "... " }}<a class="more-less__button--more" href="#">{{more_text | html_safe}}</a>
+        {{ content | html_safe | truncate: limit, "... " }}<a class="more-less__button--more" href="#">{{ more_text | html_safe }}</a>
       </div>
       <div class="more-less__full hidden">
-        {{ content | html_safe}}
+        {{ content | html_safe }}
         <br>
-        <a class="more-less__button--less" href="#">{{less_text | html_safe}}</a>
+        <a class="more-less__button--less" href="#">{{ less_text | html_safe }}</a>
       </div>
     {% else %}
-        {{ content | html_safe}}
+        {{ content | html_safe }}
     {% endif %}
   </div>
 {% endif %}

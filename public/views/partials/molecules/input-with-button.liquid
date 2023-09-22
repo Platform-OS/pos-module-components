@@ -26,7 +26,7 @@ metadata:
   assign classes = classes | default: params.classes | default: 'w-full'
 
 %}
-<div class="inline-flex items-end {{classes}}">
+<div class="inline-flex items-end {{ classes }}">
   {% theme_render_rc 'components/atoms/input', params: input_params %}
   {% theme_render_rc 'components/atoms/button', params: button_params %}
 </div>

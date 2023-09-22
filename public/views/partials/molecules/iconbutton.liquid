@@ -63,13 +63,13 @@ metadata:
 
   assign wrapper_classes = "flex items-center gap-" | append: gap
   if alignment == "left"
-    assign wrapper_classes = wrapper_classes | append:  " flex-row-reverse"
+    assign wrapper_classes = wrapper_classes | append: " flex-row-reverse"
   endif
 %}
 
 {% capture icon_content %}
-<div class="{{wrapper_classes}}">
-  <span>{{content | html_safe}}</span>
+<div class="{{ wrapper_classes }}">
+  <span>{{ content | html_safe }}</span>
   {% theme_render_rc 'components/atoms/icon', name: icon %}
 </div>
 {% endcapture %}

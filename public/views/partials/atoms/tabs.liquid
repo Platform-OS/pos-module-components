@@ -40,20 +40,20 @@ metadata:
   endif
 %}
 
-<div data-pos-component="tabs" class="{{classes}}">
+<div data-pos-component="tabs" class="{{ classes }}">
   <div role="tablist" class="pos-tabs__tablist">
     {% for tab in tabs %}
     <button class="pos-tabs__tab"
       role="tab"
-      aria-controls="{{id}}{{forloop.index}}Panel"
-      id="{{id}}{{forloop.index}}Tab"
-      tabindex="-1">{{tab.title}}</button>
+      aria-controls="{{ id }}{{ forloop.index }}Panel"
+      id="{{id}}{{ forloop.index }}Tab"
+      tabindex="-1">{{ tab.title }}</button>
     {% endfor %}
   </div>
 
   <div>
     {% for tab in tabs %}
-    <div class="pos-tabs__panel" role="tabpanel" id="{{id}}{{forloop.index}}Panel" aria-labelledby="{{id}}{{forloop.index}}Tab">{{tab.content | html_safe}}</div>
+    <div class="pos-tabs__panel" role="tabpanel" id="{{id}}{{  forloop.index  }}Panel" aria-labelledby="{{id}}{{forloop.index}}Tab">{{ tab.content | html_safe }}</div>
     {% endfor %}
   </div>
 </div>

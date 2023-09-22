@@ -26,15 +26,15 @@ metadata:
 
   assign percent = value | times: 100 | divided_by: maxValue
 
-  assign barClasses = barClasses | default: params.barClasses | default :'w-52 h-1.5 border border-input-border bg-panel'
-  assign valueClasses = valueClasses | default: params.valueClasses | default :'bg-warning h-full'
+  assign barClasses = barClasses | default: params.barClasses | default : 'w-52 h-1.5 border border-input-border bg-panel'
+  assign valueClasses = valueClasses | default: params.valueClasses | default : 'bg-warning h-full'
 %}
 
 <div
   role="range"
-  class="{{barClasses}}"
+  class="{{ barClasses }}"
   aria-valuenow="{{value}}"
-  aria-valuemax="{{maxValue}}">
-  <div class="{{valueClasses}}" style="width: {{percent}}%;">
+  aria-valuemax="{{ maxValue }}">
+  <div class="{{ valueClasses }}" style="width: {{ percent }}%;">
   </div>
 </div>
