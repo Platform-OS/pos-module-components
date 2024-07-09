@@ -26,7 +26,8 @@ module.exports = {
     "../public/views/partials/**/*.liquid",
     "../../**/public/views/pages/**/*.liquid",
     "../../**/public/views/partials/**/*.liquid",
-    "./scripts/*.js"
+    "./scripts/*.js",
+    "./styles/**/*.css"
   ],
   theme: {
     extend: {

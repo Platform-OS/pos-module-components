@@ -1,3 +1,5 @@
+window.posSelects = window.posSelects || [];
+
 const componentModule = (elements) => {
 
   elements.forEach(selectComponentWrapper => {
@@ -10,9 +12,22 @@ const componentModule = (elements) => {
 
     let optionHoveredIndex = -1;
 
+    let currentSelectClose = (event) => {
+      closeOptions(event);
+    }
+
+    window.posSelects.push(currentSelectClose);
+
     /* toggle open for custom select */
     const toggleOpen = (event) => {
       event.stopPropagation();
+
+      window.posSelects.forEach(selectClose => {
+        if(selectClose != currentSelectClose) {
+          selectClose(event);
+        }
+      });
+
       popup.classList.toggle('hidden');
       popup.ariaHidden = popup.ariaHidden === 'true' ? 'false' : 'true';
       const openerIcons = selectComponentWrapper.querySelectorAll('.pos-select__opener > div');
@@ -133,7 +148,13 @@ const componentModule = (elements) => {
             } else {
               counter.classList.add('hidden');
             }
-            counter.children[0]?.children[0]?.textContent = checkedBoxes.length + counter.dataset.label;
+            const firstChild = counter.children[0];
+            if (firstChild) {
+              const secondChild = firstChild.children[0];
+              if (secondChild) {
+                secondChild.textContent = checkedBoxes.length + counter.dataset.label;
+              }
+            }
           }
         });
       });
@@ -256,7 +277,6 @@ const componentModule = (elements) => {
         });
       });
     };
-
 
   });
 
