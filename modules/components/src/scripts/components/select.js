@@ -133,7 +133,9 @@ const componentModule = (elements) => {
             } else {
               counter.classList.add('hidden');
             }
-            counter.children[0]?.children[0]?.textContent = checkedBoxes.length + counter.dataset.label;
+            if(counter.children[0] && counter.children[0].children[0]){
+              counter.children[0].children[0].textContent = checkedBoxes.length + counter.dataset.label;
+            }
           }
         });
       });
