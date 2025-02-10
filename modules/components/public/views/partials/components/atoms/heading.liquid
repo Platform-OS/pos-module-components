@@ -19,6 +19,7 @@ metadata:
   assign tag = tag | default: params.tag | default: defaultTag
   assign attributes = attributes | default: params.attributes
   assign content = content | default: params.content
+  assign is_html = is_html | default: params.is_html
 
   assign classes = classes | default: params.classes | append: ' font-bold'
 
@@ -42,6 +43,10 @@ metadata:
   {% for attribute in attributes %}
   {{ attribute[0] }}="{{ attribute[1] }}"
   {% endfor %}
->{% print content %}</{{tag}}>
-
-
+>
+{%- if is_html -%}
+  {%- print content -%}
+{%- else -%}
+  {{ content }}
+{%- endif -%}
+</{{tag}}>
