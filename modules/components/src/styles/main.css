@@ -1,5 +1,4 @@
-@import "./components.css";
+@import "./components.css" layer(tw-components);
 
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
+@import "tailwindcss/components" layer(tw-components);
+@import "tailwindcss/utilities" layer(tw-components);
