@@ -5,6 +5,7 @@
 @import "./components/accordion.css" layer(tw-components);
 @import "./components/toggle.css" layer(tw-components);
 @import "./components/tabs.css" layer(tw-components);
+@import "./components/date-time.css" layer(tw-components);
 
 @import "tailwindcss/utilities" layer(tw-components);
 
