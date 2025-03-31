@@ -7,4 +7,11 @@
   .prose a:not(.pos-clean) {
     @apply underline text-interactive-text;
   }
+
+  :root {
+  --tw-calendar-invert: 30%;
+  --tw-calendar-sepia: 100%;
+  --tw-calendar-saturate: 1000%;
+  --tw-calendar-hue-rotate: 200deg;
+  }
 }

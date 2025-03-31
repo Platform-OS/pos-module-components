@@ -80,7 +80,12 @@ module.exports = {
         'confirmation-disabled': parseColor('confirmation-disabled'),
         'warning': parseColor('warning'),
         'warning-hover': parseColor('warning-hover'),
-        'warning-disabled': parseColor('warning-disabled')
+        'warning-disabled': parseColor('warning-disabled'),
+        'calendar-invert': 'var(--tw-calendar-invert)',
+        'calendar-sepia': 'var(--tw-calendar-sepia)',
+        'calendar-saturate': 'var(--tw-calendar-saturate)',
+        'calendar-hue-rotate': 'var(--tw-calendar-hue-rotate)'
+
       },
       borderColor: {
         DEFAULT: parseColor('divider')
