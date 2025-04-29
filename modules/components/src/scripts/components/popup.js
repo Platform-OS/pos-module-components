@@ -30,7 +30,6 @@ const closePopup = popupId => {
 const popupOpeners = document.querySelectorAll('[data-popup-open-id]');
 popupOpeners.forEach(opener => {
   opener.addEventListener('click', (event) => {
-    event.stopPropagation();
     const popupId = opener.getAttribute('data-popup-open-id');
     togglePopup(popupId);
   });
