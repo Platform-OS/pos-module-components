@@ -42,7 +42,7 @@ metadata:
     <div id="popup_title_{{popup_id}}">
       {% theme_render_rc 'components/atoms/heading', params: headline_params %}
     </div>
-    <div class="cursor-pointer" data-popup-open-id="{{popup_id}}">
+    <div class="cursor-pointer pt-2" data-popup-open-id="{{popup_id}}">
       {% if closeIcon == true and closable == true%}
       {% theme_render_rc 'components/atoms/icon', params: icon_params %}
       {% endif %}
