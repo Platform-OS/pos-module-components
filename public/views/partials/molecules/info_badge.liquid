@@ -1,0 +1,46 @@
+---
+metadata:
+  name: Info badge
+  params:
+    classes: ''
+    info_text1: This is an example card
+    info_text2: This is an example card
+    icon: ''
+  styleguide:
+    - info_text1: 120k
+      info_text2: People
+    - info_text1: 1,5k
+      info_text2: Groups
+      icon: 'multipleUsersNetwork'
+    - info_text1: 560k Answers
+      info_text2: Tracking
+      icon: 'commentText'
+---
+{% liquid
+  assign classes = params.classes
+  assign info_text1 = params.info_text1
+  assign info_text2 = params.info_text2
+  assign icon = params.icon
+
+  assign classes = 'pr-3 pl-6 flex items-center rounded shadow-card w-48 h-24 bg-panel ' | append: classes
+
+  assign icon_params = null | hash_merge: name: icon, class: "w-7 h-7"
+
+%}
+<div class="{{classes}}">
+  <div class="flex items-center align-center">
+  {% if icon != blank %}
+    <div class="pr-4">
+      {% theme_render_rc 'components/atoms/icon', params: icon_params %}
+    </div>
+  {% endif %}
+    <div>
+      <div>
+        {{info_text1}}
+      </div>
+      <div class="text-interactive-graphic font-bold">
+        {{info_text2}}
+      </div>
+    </div>
+  </div>
+</div>
